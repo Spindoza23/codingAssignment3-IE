@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
 /*
 Tests alu.v
 */
@@ -21,25 +21,33 @@ module alu_tb;
     );
   
     initial begin
-        a <= 'b1010; // 10
-        b <= 'b0111; // 7
-        control <= 'b011;
-        $display("A = %b\t B = %b", a, b);
-        $monitor("ALUop = %b\t result = %b\t zero = %b", control, result, zero);
+        $monitor("t=%0t a = %h\t b = %h\t control = %b\t result = %h\t zero = %b", $time, a, b, control, result, zero);
+        a = 32'd10; // 10
+        b = 32'd7; // 7
+        #1
+        control = 3'b011; //invalid -> result = x       
         #1 
-        control <= 'b100;
+        control = 3'b100; //invalid -> result = x
         #1 
-        control <= 'b010;
+        control = 3'b010; //add -> 17
         #1 
-        control <= 'b111; // result = 0 check slt
+        control = 3'b110; //sub -> 3
         #1 
-        control <= 'b011;
+        control = 3'b000; // and -> 2
         #1 
-        control <= 'b110;
+        control = 3'b001; // or -> 15
         #1 
-        control <= 'b001; // result = 'b1111, check or
-        #1 
-        control <= 'b000; // result = 'b10, check and
+        control = 3'b111; // slt 10<7 -> 0, zero = 1
+        #1
+        a = 32'd5; 
+        b = 32'd5;
+        #1
+        control = 3'b110; // sub 5-5 -> 0, zero = 1 (what the branch uses)
+        #1
+        a = 32'hFFFFFFFF;
+        b = 32'd1;
+        #1
+        control = 3'b111; // slt -1<1 -> 1 (negative input)
         #1
         $finish;
     end
