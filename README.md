@@ -9,6 +9,7 @@ verified.
 - **Out of scope:** Future stages (MEM & WB) as well as hazard handling will be implemented in later labs.
 - **Assumptions:** 32-bit data and addresses. The ALU, ALU control, muxes, and branch adder are combinational. Only the EX/MEM latch is clocked, on the rising clock edge. ALU control follows Fig. 2 in the images folder.
 - **Limitations:** The ALU supports add, subtract, AND, OR, and set-on-less-than. Invalid ALUOp combinations produce select 011, and the ALU outputs unknown XXX values for any invalid select code.
+  
 ## Requirements
 | Requirement | Description | Verification Method |
 |---|---|---|
@@ -23,7 +24,8 @@ inspection] |
 ### Timing or Behavioral Summary
 Save diagrams in the repository's `images/` folder. Use relative paths so they
 display on GitHub.
-![Timing Diagram](images/[timing-diagram-filename].png)
+![Execute Stage Diagram](images/Fig1.png)
+![ALU Control Operations](images/Fig2.png)
 
 ## Implementation
 ### Source Code
