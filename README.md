@@ -8,7 +8,7 @@ verified.
 - **In scope:** The execute stage of the MIPS pipeline takes the operands and control bits from the ID/EX latch, performing the arithmetic or logic operation in the ALU, computing the branch target address, selecting the destination register number, and storing results in the EX/MEM latch.
 - **Out of scope:** Future stages (MEM & WB) as well as hazard handling will be implemented in later labs.
 - **Assumptions:** 32-bit data and addresses. The ALU, ALU control, muxes, and branch adder are combinational. Only the EX/MEM latch is clocked, on the rising clock edge. ALU control follows Fig. 2 in the images folder.
-- **Limitations:** The ALU supports add, subtract, AND, OR< and set-on-less-than. Invalid ALUOp combinations produce select 011, and the ALU outputs unknown XXX values for any invalid select code.
+- **Limitations:** The ALU supports add, subtract, AND, OR, and set-on-less-than. Invalid ALUOp combinations produce select 011, and the ALU outputs unknown XXX values for any invalid select code.
 ## Requirements
 | Requirement | Description | Verification Method |
 |---|---|---|
@@ -27,9 +27,17 @@ display on GitHub.
 ### Source Code
 | File | Description |
 |---|---|
-| [`[module].v`](LINK_TO_IMPLEMENTATION_CODE) | [Primary implementation module] |
-| [`[component].v`](LINK_TO_COMPONENT_CODE) | [Supporting component] |
-| [`[testbench].v`](LINK_TO_TESTBENCH_CODE) | [Verification testbench] |
+| [`alu.v`]((https://github.com/Spindoza23/codingAssignment3-IE/blob/main/alu.v)) | Performs add, subtract, AND, OR, and set-on-less-than on two 32-bit inputs, and outputs the results and the zero flag |
+| [`alu_control.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/alu_control.v) | Converts ALUOp and the function field into the ALU select code |
+| [`adder.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/adder.v) | Branch adder  |
+| [`top_mux.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/top_mux.v) | DESCRIPTION |
+| [`bottom_mux.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/bottom_mux.v) | DESCRIPTION |
+| [`ex_mem_latch.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/alu.v) | DESCRIPTION|
+| [`execute.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/execute.v) | [Verification testbench] |
+| [`alu_tb.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/alu_tb.v) | Testbench for the ALU |
+| [`alu_control_tb.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/alu_control_tb.v) | Testbench for the ALU control |
+| [`execute_tb.v`](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/execute_tb.v) | Testbench for the full execute stage |
+
 ### Implementation Notes
 - [Explain one important design decision.]
 - [Identify any parameterization, reusable module, or interface convention.]
