@@ -1,4 +1,5 @@
 // top_mux.v - Uses ALUSrc to select between SignExtend and ReadData2 to send to the ALU as its second operand
+// Basically: 1 = I-type instruction (Reg + Immediate), 0 = R-type instruction (Reg + Reg)
 
 `timescale 1ns / 1ps
 
