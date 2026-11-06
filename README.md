@@ -22,8 +22,7 @@ inspection] |
 
 ## Architecture
 ### Timing or Behavioral Summary
-Save diagrams in the repository's `images/` folder. Use relative paths so they
-display on GitHub.
+DESCRIPTION
 ![Execute Stage Diagram](images/Fig1.png)
 ![ALU Control Operations](images/Fig2.png)
 
