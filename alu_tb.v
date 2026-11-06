@@ -2,7 +2,7 @@
 /*
 Tests alu.v
 */
-module alu_b;
+module alu_tb;
     // Inputs
     reg [31:0] a;
     reg [31:0] b;
