@@ -18,11 +18,13 @@ inspection] |
 inspection] |
 | REQ-03 | [The design shall ...] | [Test case, waveform, calculation, or
 inspection] |
+
 ## Architecture
 ### Timing or Behavioral Summary
 Save diagrams in the repository's `images/` folder. Use relative paths so they
 display on GitHub.
 ![Timing Diagram](images/[timing-diagram-filename].png)
+
 ## Implementation
 ### Source Code
 | File | Description |
@@ -42,6 +44,7 @@ display on GitHub.
 - [Explain one important design decision.]
 - [Identify any parameterization, reusable module, or interface convention.]
 - [Document any deliberate simplification made for this lab.]
+
 ## Verification
 ### Verification Strategy
 The design is verified using **[simulation, formal checks, hardware testing, or
@@ -61,22 +64,22 @@ The testbench source is available [*here*](LINK_TO_TESTBENCH_CODE).
 | TC-01 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
 | TC-02 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
 | TC-03 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
+
 ## Reproduction Instructions
 ### Tools and Versions
-- **Simulator / synthesis tool:** [Name and version]
-- **Language / standard:** [Verilog/SystemVerilog version]
-- **Operating system:** [macOS, Windows, Linux, or other]
-- **Additional dependencies:** [List any required tools or libraries]
+- **Simulator / synthesis tool:** Vivado
+- **Language / standard:** Verilog
+- **Operating system:** Windows
+- **Additional dependencies:** n/a
 ### Build and Run
 ```bash
-# Replace these commands with the commands required for this lab.
-[compile-command]
-[run-command]
+
 ```
 Expected output:
 ```text
 [Paste a short representative output or result here.]
 ```
+
 ## Repository Organization
 ```text
 .
