@@ -5,11 +5,10 @@ Keep this README focused on what the design does, how it is used, and how it was
 verified.
 -->
 ## Design Scope and Assumptions
-- **In scope:** [What this lab implements]
-- **Out of scope:** [What this lab intentionally does not implement]
-- **Assumptions:** [Clock frequency, reset behavior, data width, memory model, or
-other assumptions]
-- **Limitations:** [Known limitations or simplified behaviors]
+- **In scope:** The execute stage of the MIPS pipeline takes the operands and control bits from the ID/EX latch, performing the arithmetic or logic operation in the ALU, computing the branch target address, selecting the destination register number, and storing results in the EX/MEM latch.
+- **Out of scope:** Future stages (MEM & WB) as well as hazard handling will be implemented in later labs.
+- **Assumptions:** 32-bit data and addresses. The ALU, ALU control, muxes, and branch adder are combinational. Only the EX/MEM latch is clocked, on the rising clock edge. ALU control follows Fig. 2 in the images folder.
+- **Limitations:** The ALU supports add, subtract, AND, OR< and set-on-less-than. Invalid ALUOp combinations produce select 011, and the ALU outputs unknown XXX values for any invalid select code.
 ## Requirements
 | Requirement | Description | Verification Method |
 |---|---|---|
