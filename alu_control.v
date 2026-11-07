@@ -1,8 +1,7 @@
+// alu_control.v - Takes in 6 bit of s_extendout with alu_op and outputs select, which is the control for alu.v 
+// This bridges machine language with assembly language.
 //`timescale 1ns / 1ps
-/*
-Takes in 6 bit of s_extendout with alu_op and outputs select, which is the control.
-for alu.v This bridges machine language with assembly language.
-*/
+
 module alu_control(
     input wire [5:0] funct, //from ID/EX latch (sing extend [5:0])
     input wire [1:0] aluop, //from the control (id/ex execute bits)
