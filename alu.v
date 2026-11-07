@@ -1,9 +1,7 @@
+// adder.v - Takes in rdata1 as its input as well as "b," which is the output of top_mux. It outputs result, later known as aluout, and zero, which is then aluzero for ex_mem.v.
+// This handles the logical and arithmetic correspondence.
 `timescale 1ns / 1ps
-/*
-Takes in rdata1 as its input as well as "b," which is the output of top_mux.
-It outputs result, later known as aluout, and zero, which is then aluzero for ex_mem.v.
-This handles the logical and arithmetic correspondence.
-*/
+
 module alu(
     input wire [31:0] a, // source from register
     input wire [31:0] b, // target from register
