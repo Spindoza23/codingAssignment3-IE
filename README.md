@@ -62,15 +62,16 @@ Verification covers:
 - Checking that the branch adder produces the expected target address.
 - Checking that the EX/MEM latch captures the appropriate data and control signals on the rising clock edge.
 ### Testbench and Waveform
-Save screenshots and waveform images in the repository's `images/` folder.
-![Testbench or waveform](images/[testbench-screenshot-filename].png)
-The testbench source is available [*here*](LINK_TO_TESTBENCH_CODE).
+![Testbench or waveform](images/testbenchDiagram.png)
+The testbench source is available [*here*](https://github.com/Spindoza23/codingAssignment3-IE/blob/main/execute_tb.v).
 ### Results
 | Test Case | Expected Result | Observed Result | Status |
 |---|---|---|---|
-| TC-01 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
-| TC-02 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
-| TC-03 — [Name] | [Expected behavior] | [Observed behavior] | Pass / Fail |
+| TC-01 — ALU Operations | ALU produces the correct result for the selected operation | ALU results visible in the waveform | Pass |
+| TC-02 — ALU Control | ALU select code changes according to ALUOp and the function field | ALU control signals change during simulation | Pass |
+| TC-03 — ALUSrc Selection | ALU receives the selected register or immediate operand | ALU operand selection changes with ALUSrc | Pass |
+| TC-04 — Branch Address | Branch adder calculates the correct target address | Adder output displayes 0000006C with NPC 00000064 | Pass |
+| TC-05 — EX/MEM Latch | Outputs update on the rising clock edge | Data and control outputs are visible in the timing diagram | Pass |
 
 ## Reproduction Instructions
 ### Tools and Versions
@@ -80,11 +81,17 @@ The testbench source is available [*here*](LINK_TO_TESTBENCH_CODE).
 - **Additional dependencies:** n/a
 ### Build and Run
 ```bash
-
+1. Open Vivado.
+2. Create a new RTL project.
+3. Add all execute-stage Verilog source files.
+4. Add the testbench files as simulation sources.
+5. Set execute_tb.v as the top simulation module.
+6. Run behavioural simulation.
+7. Open the waveform window and add the relevant signals to observe the execute-stage behaviour.
 ```
 Expected output:
 ```text
-[Paste a short representative output or result here.]
+The simulation should display the ALU results, control signals, branch address, mux outputs, and EX/MEM latch outputs changing according to the testbench inputs and clock cycles.
 ```
 
 ## Repository Organization
@@ -92,11 +99,20 @@ Expected output:
 .
 ├── README.md
 ├── images/
-│ ├── [timing-diagram-filename].png
-│ └── [testbench-screenshot-filename].png
-├── [source-files]
-└── [testbench-files]
+│ ├── Fig1.png
+│ ├── Fig2.png
+│ └── timingDiagram.png
+├── adder.v
+├── alu.v
+├── alu_control.v
+├── alu_control_tb.v
+├── alu_tb.v
+├── bottom_mux.v
+├── ex_mem_latch.v
+├── execute.v
+├── execute_tb.v
+└── top_mux.v
 ```
 ## Known Issues and Future Improvements
-- [Document any known issue, unverified behavior, or technical debt.]
-- [Describe a realisti
+- Hazard detection and forwarding are not implemented in this assignment and will be addressed in our optimization.
+- Additional testing could include more boundary-value cases and invalid ALU control combinations.
