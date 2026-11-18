@@ -30,6 +30,7 @@ The ALU Performs the selected arithmetic or logical operation, and generates the
 
 The resulting data and control signals are passed to the EX/MEM latch. On the rising edge of the clock, the latch captures these values and makes them available to the following stage.
 ![Execute Stage Diagram](images/Fig1.png)
+![Updated Timing Diagram](<img width="1742" height="860" alt="image" src="https://github.com/user-attachments/assets/7dbbf8e4-75bf-4178-9448-5f1cc375c283" />)
 ![ALU Control Operations](images/Fig2.png)
 
 ## Implementation
