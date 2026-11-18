@@ -50,7 +50,7 @@ module alu_control(
                     default:  select = ALUx;
                 endcase
             end
-            default: seelct = ALUx; // aluop unknown
+            default: select = ALUx; // aluop unknown
         endcase
     end
 endmodule
