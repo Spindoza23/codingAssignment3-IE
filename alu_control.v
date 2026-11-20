@@ -35,7 +35,7 @@ module alu_control(
               FUNCTor  = 6'b100101,
               FUNCTslt = 6'b101010;
     
-    initial select = 3'b000;
+    //initial select = 3'b000;
     always@(*) begin
         case (aluop)
             lwsw: select = ALUadd;
